@@ -201,6 +201,7 @@ h1, h2, h3, h4 {
 .service-card__img img,
 .catalog-card__img img,
 .about__img img,
+.hero__bg img,
 .hero__img img {
   width: 100%;
   height: 100%;
@@ -444,31 +445,47 @@ h1, h2, h3, h4 {
    ===================================================== */
 .hero {
   /* Точки + полупрозрачный градиент + фото */
-  background:
-    radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(12,35,64,0.88) 0%, rgba(26,74,122,0.80) 55%, rgba(45,106,176,0.72) 100%),
-    #0C2340;
-  background-size: 28px 28px, 100% 100%, auto;
+  background: #0C2340;
   min-height: calc(85vh - var(--header-h));
   padding: var(--spacing-3xl) 0;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 /* Декоративный круг 1 — большой, правый верх */
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(12,35,64,0.92) 0%, rgba(12,35,64,0.82) 38%, rgba(26,74,122,0.64) 100%),
+    radial-gradient(circle at 18% 82%, rgba(255,87,34,0.2) 0%, transparent 32%);
+  pointer-events: none;
+}
+
 .hero::before {
   content: '';
   position: absolute;
-  width: 560px;
-  height: 560px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  top: -140px;
-  right: -100px;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.45;
   pointer-events: none;
+  z-index: 0;
 }
 
 /* Декоративный круг 2 — оранжевое свечение, левый низ */
@@ -482,6 +499,7 @@ h1, h2, h3, h4 {
   bottom: -80px;
   left: 6%;
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero__inner {
@@ -528,36 +546,20 @@ h1, h2, h3, h4 {
 }
 
 /* Фото фона hero — per-page modifier classes */
-.hero--main {
-  background:
-    radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(12,35,64,0.86) 0%, rgba(26,74,122,0.78) 55%, rgba(45,106,176,0.70) 100%),
-    url('https://images.unsplash.com/photo-1581092335397-9fa341108e1e?w=1600&q=80') center/cover no-repeat;
-  background-size: 28px 28px, 100% 100%, cover;
+.hero--main .hero__bg img {
+  object-position: center center;
 }
 
-.hero--s1 {
-  background:
-    radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(12,35,64,0.86) 0%, rgba(26,74,122,0.78) 55%, rgba(45,106,176,0.70) 100%),
-    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
-  background-size: 28px 28px, 100% 100%, cover;
+.hero--s1 .hero__bg img {
+  object-position: center 42%;
 }
 
-.hero--s2 {
-  background:
-    radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(12,35,64,0.86) 0%, rgba(26,74,122,0.78) 55%, rgba(45,106,176,0.70) 100%),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80') center/cover no-repeat;
-  background-size: 28px 28px, 100% 100%, cover;
+.hero--s2 .hero__bg img {
+  object-position: center center;
 }
 
-.hero--s3 {
-  background:
-    radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(12,35,64,0.86) 0%, rgba(26,74,122,0.78) 55%, rgba(45,106,176,0.70) 100%),
-    url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1600&q=80') center/cover no-repeat;
-  background-size: 28px 28px, 100% 100%, cover;
+.hero--s3 .hero__bg img {
+  object-position: center 32%;
 }
 
 /* Hero на страницах услуг */
@@ -1372,7 +1374,7 @@ h1, h2, h3, h4 {
 }
 
 .catalog-card__img {
-  height: 200px;
+  height: 220px;
   overflow: hidden;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
