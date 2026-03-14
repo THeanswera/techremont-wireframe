@@ -13,7 +13,6 @@
     burger.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Закрытие при клике на ссылку внутри мобильного меню
   mobileMenu.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       mobileMenu.classList.remove('mobile-menu--open');
@@ -29,7 +28,6 @@
 (function () {
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-  // Десктопная навигация
   document.querySelectorAll('.nav__link').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -37,13 +35,31 @@
     }
   });
 
-  // Мобильная навигация
   document.querySelectorAll('.mobile-menu__link').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('mobile-menu__link--active');
     }
   });
+})();
+
+/* ===========================
+   HEADER — ТЕНЬ ПРИ СКРОЛЛЕ
+   =========================== */
+(function () {
+  var header = document.querySelector('.header');
+  if (!header) return;
+
+  function onScroll() {
+    if (window.scrollY > 20) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // Проверить при загрузке
 })();
 
 /* ===========================
@@ -65,6 +81,53 @@
 })();
 
 /* ===========================
+   АНИМАЦИИ ПОЯВЛЕНИЯ (INTERSECTION OBSERVER)
+   =========================== */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  // Селекторы элементов, которые анимируются
+  var selectors = [
+    '.advantage-card',
+    '.service-card',
+    '.repair-card',
+    '.step-card',
+    '.catalog-card',
+    '.about__inner',
+    '.cta-form__inner',
+    '.catalog-banner',
+    '.price-table',
+    '.pagination',
+    '.section__title',
+    '.catalog__header',
+    '.request__inner',
+    '.cta__title',
+    '.cta__text'
+  ];
+
+  var elements = document.querySelectorAll(selectors.join(', '));
+  elements.forEach(function (el) {
+    el.classList.add('reveal');
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal--visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  elements.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+
+/* ===========================
    ФИЛЬТРЫ КАТАЛОГА
    =========================== */
 (function () {
@@ -75,7 +138,6 @@
     btn.addEventListener('click', function () {
       filterBtns.forEach(function (b) { b.classList.remove('filter-btn--active'); });
       btn.classList.add('filter-btn--active');
-      // В wireframe фильтрация визуально не реализована — только переключение активной кнопки
     });
   });
 })();
@@ -87,8 +149,20 @@
   document.querySelectorAll('form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Заявка принята! Мы свяжемся с вами в ближайшее время.');
-      form.reset();
+      var btn = form.querySelector('[type="submit"]');
+      var original = btn.textContent;
+
+      btn.textContent = 'Отправляем...';
+      btn.disabled = true;
+
+      setTimeout(function () {
+        btn.textContent = '✓ Заявка отправлена!';
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.disabled = false;
+          form.reset();
+        }, 2500);
+      }, 800);
     });
   });
 })();
