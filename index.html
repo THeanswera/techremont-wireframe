@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ТехРемонт — Профессиональный ремонт техники</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================
+       HEADER
+       ======================== -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">ТехРемонт</a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Услуги ▾</a>
+              <div class="nav__dropdown">
+                <a href="service-1.html" class="nav__dropdown-link">Ремонт бытовой техники</a>
+                <a href="service-2.html" class="nav__dropdown-link">Ремонт компьютеров и ноутбуков</a>
+                <a href="service-3.html" class="nav__dropdown-link">Ремонт телефонов и планшетов</a>
+              </div>
+            </li>
+            <li class="nav__item">
+              <a href="catalog.html" class="nav__link">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacts" class="nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__contacts">
+          <span class="header__phone">+7 (800) 555-35-35</span>
+          <a href="#request" class="btn btn--sm">Оставить заявку</a>
+        </div>
+
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" aria-hidden="true">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" class="mobile-menu__link">Главная</a></li>
+        <li><a href="service-1.html" class="mobile-menu__link">Ремонт бытовой техники</a></li>
+        <li><a href="service-2.html" class="mobile-menu__link">Ремонт компьютеров и ноутбуков</a></li>
+        <li><a href="service-3.html" class="mobile-menu__link">Ремонт телефонов и планшетов</a></li>
+        <li><a href="catalog.html" class="mobile-menu__link">Каталог</a></li>
+        <li><a href="#contacts" class="mobile-menu__link">Контакты</a></li>
+      </ul>
+      <p class="mobile-menu__phone">+7 (800) 555-35-35</p>
+      <div class="mobile-menu__btn">
+        <a href="#request" class="btn" style="width:100%;text-align:center;display:block;">Оставить заявку</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================
+         HERO
+         ======================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">Профессиональный ремонт техники в Москве</h1>
+            <p class="hero__subtitle">Быстро, качественно и с гарантией. Ремонтируем бытовую технику, компьютеры, ноутбуки, телефоны и планшеты любых брендов.</p>
+            <div>
+              <a href="#request" class="btn btn--primary">Оставить заявку</a>
+            </div>
+          </div>
+          <div class="img-placeholder hero__img">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span>Фото</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         ПРЕИМУЩЕСТВА
+         ======================== -->
+    <section class="advantages" id="advantages">
+      <div class="container">
+        <h2 class="section__title">Почему выбирают нас</h2>
+        <div class="advantages__grid">
+
+          <article class="advantage-card">
+            <div class="advantage-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Гарантия 1 год</h3>
+            <p class="advantage-card__text">Предоставляем официальную гарантию на все виды выполненных работ и установленные запчасти сроком 12 месяцев.</p>
+          </article>
+
+          <article class="advantage-card">
+            <div class="advantage-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Ремонт за 1 день</h3>
+            <p class="advantage-card__text">Большинство неисправностей устраняем в день обращения. Срочный ремонт выполняем в течение 2–4 часов.</p>
+          </article>
+
+          <article class="advantage-card">
+            <div class="advantage-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Оригинальные запчасти</h3>
+            <p class="advantage-card__text">Работаем только с сертифицированными поставщиками. Используем оригинальные комплектующие производителей.</p>
+          </article>
+
+          <article class="advantage-card">
+            <div class="advantage-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Бесплатная диагностика</h3>
+            <p class="advantage-card__text">Проводим полную диагностику устройства бесплатно. Вы решаете — делать ремонт или нет, без каких-либо обязательств.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         УСЛУГИ
+         ======================== -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section__title">Наши услуги</h2>
+        <div class="services__grid">
+
+          <article class="service-card">
+            <div class="img-placeholder service-card__img">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+              </svg>
+              <span>Фото</span>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Ремонт бытовой техники</h3>
+              <p class="service-card__text">Стиральные машины, холодильники, посудомойки, плиты и вытяжки.</p>
+              <a href="service-1.html" class="btn btn--sm">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="img-placeholder service-card__img">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+              </svg>
+              <span>Фото</span>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Ремонт компьютеров и ноутбуков</h3>
+              <p class="service-card__text">Замена экранов, чистка, апгрейд, удаление вирусов, установка ПО.</p>
+              <a href="service-2.html" class="btn btn--sm">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="img-placeholder service-card__img">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+              </svg>
+              <span>Фото</span>
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Ремонт телефонов и планшетов</h3>
+              <p class="service-card__text">Замена стекла, батареи, разъёмов, восстановление после воды.</p>
+              <a href="service-3.html" class="btn btn--sm">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         О КОМПАНИИ
+         ======================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__content">
+            <h2 class="about__title">О компании ТехРемонт</h2>
+            <p class="about__text">Сервисный центр «ТехРемонт» работает на рынке с 2010 года. За это время мы выполнили более 25 000 успешных ремонтов и завоевали доверие тысяч клиентов по всей Москве и Московской области. Наши мастера — сертифицированные специалисты с опытом работы от 5 лет.</p>
+            <p class="about__text">Мы оснащены современным диагностическим оборудованием и собственным складом оригинальных запасных частей. Это позволяет нам работать быстро и не заставлять клиентов ждать поставок неделями.</p>
+            <p class="about__text">В нашем сервисном центре вы можете получить полный спектр услуг: от консультации и диагностики до сложного ремонта и профилактического обслуживания. Мы ценим ваше время и предлагаем услугу выезда мастера на дом.</p>
+          </div>
+          <div class="img-placeholder about__img">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span>Изображение</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         ФОРМА ЗАЯВКИ
+         ======================== -->
+    <section class="request" id="request">
+      <div class="container">
+        <div class="request__inner">
+          <h2 class="request__title">Оставить заявку</h2>
+          <form class="form" novalidate>
+            <div class="form__field">
+              <label class="form__label" for="name">Ваше имя</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Иван Иванов" required />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="phone">Телефон</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="problem">Опишите проблему</label>
+              <textarea class="form__textarea" id="problem" name="problem" placeholder="Например: стиральная машина не отжимает, ноутбук не включается..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary form__submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================
+       FOOTER
+       ======================== -->
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Навигация</h4>
+          <ul>
+            <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+            <li><a href="#services" class="footer__nav-link">Услуги</a></li>
+            <li><a href="catalog.html" class="footer__nav-link">Каталог</a></li>
+            <li><a href="#about" class="footer__nav-link">О компании</a></li>
+            <li><a href="#contacts" class="footer__nav-link">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Услуги</h4>
+          <ul>
+            <li><a href="service-1.html" class="footer__nav-link">Ремонт бытовой техники</a></li>
+            <li><a href="service-2.html" class="footer__nav-link">Ремонт компьютеров</a></li>
+            <li><a href="service-3.html" class="footer__nav-link">Ремонт телефонов</a></li>
+            <li><a href="catalog.html" class="footer__nav-link">Все услуги и цены</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Контакты</h4>
+          <p class="footer__contact-item">г. Москва, ул. Мастеровая, д. 14, оф. 3</p>
+          <p class="footer__contact-item">Пн–Пт: 9:00–20:00<br>Сб–Вс: 10:00–18:00</p>
+          <p class="footer__contact-item">+7 (800) 555-35-35</p>
+          <p class="footer__contact-item">info@techremont.ru</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Мы в соцсетях</h4>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="ВКонтакте">ВК</a>
+            <a href="#" class="footer__social" aria-label="Telegram">TG</a>
+            <a href="#" class="footer__social" aria-label="Одноклассники">ОК</a>
+            <a href="#" class="footer__social" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2010–2026 ТехРемонт. Все права защищены. Сервисный центр по ремонту техники в Москве.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
